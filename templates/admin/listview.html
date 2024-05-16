@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>List of books</h2>
+
+<a href="{% url 'createbook' %}">Create Book</a>
+<ul>
+
+    {% for book in books %}
+
+    {{ book.title}} - {{ book.price}} -
+    <a href="{% url 'details' book.pk %}">Details</a>
+    <a href="{% url 'update' book.pk %}">Update</a>
+    <a href="{% url 'delete' book.pk %}">Delete</a>
+
+    <br>
+
+    {% endfor %}
+
+
+</ul>
+
+</body>
+</html>
